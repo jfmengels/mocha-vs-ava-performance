@@ -1,0 +1,4 @@
+./mocha-tests/**.test.js
+--reporter spec
+--compilers es6:babel-core/register
+--recursive

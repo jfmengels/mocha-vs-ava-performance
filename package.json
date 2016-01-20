@@ -1,0 +1,36 @@
+{
+  "name": "mocha-vs-ava-performance",
+  "version": "1.0.0",
+  "description": "Setup to help identify performance problems for Ava",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test-ava && npm run test-mocha",
+    "test-ava": "time -f'%E' ava ava-tests/ --require babel-register",
+    "test-ava:no-cache": "time -f'%E' ava ava-tests/ --require babel-register --no-cache",
+    "test-ava:watch": "nodemon --watch ava-tests/ --exec 'time -f'%E' ava ava-tests/ --require babel-register'",
+    "test-mocha": "time -f'%E' mocha --opts mocha.opts",
+    "test-mocha:watch": "mocha --opts mocha.opts --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jfmengels/mocha-vs-ava-performance.git"
+  },
+  "author": "Jeroen Engels <jfm.engels@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jfmengels/mocha-vs-ava-performance/issues"
+  },
+  "homepage": "https://github.com/jfmengels/mocha-vs-ava-performance#readme",
+  "devDependencies": {
+    "ava": "^0.10.0",
+    "babel-core": "^6.4.5",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-stage-2": "^6.3.13",
+    "babel-register": "^6.4.3",
+    "deep-freeze-node": "^1.1.1",
+    "expect": "^1.13.4",
+    "lodash": "^4.0.0",
+    "mocha": "^2.3.4",
+    "nodemon": "^1.8.1"
+  }
+}
